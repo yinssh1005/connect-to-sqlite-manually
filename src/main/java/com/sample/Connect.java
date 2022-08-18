@@ -6,7 +6,6 @@ public class Connect {
 
     private static final String JDBC_URL_CONST = "jdbc:sqlite:D:\\idea_projects\\connect-to-sqlite-manually\\src\\main\\resources\\new_db";
     private static Statement statement;
-    private static Connection connection;
 
     /**
      * Connect to a sample database
@@ -16,7 +15,7 @@ public class Connect {
 
             // create a connection to the database
             Class.forName("org.sqlite.JDBC");
-            connection = DriverManager.getConnection(JDBC_URL_CONST);
+            Connection connection = DriverManager.getConnection(JDBC_URL_CONST);
 
             System.out.println("Connection to SQLite has been established.");
 
@@ -41,6 +40,7 @@ public class Connect {
     }
 
     public static void main(String[] args) {
+        // connect to db and execute the query
         connect();
     }
 }
